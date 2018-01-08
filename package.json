@@ -1,0 +1,26 @@
+{
+  "name": "docker-image-semver-builder",
+  "version": "0.0.1",
+  "description": "A docker image builder with semver version support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "docker",
+    "image",
+    "semver",
+    "version"
+  ],
+  "author": "long.zhang@me.com",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.10.0",
+    "pequod": "^1.5.2",
+    "semver": "^5.4.1",
+    "yargs": "^10.0.3"
+  },
+  "bin": {
+    "di-semver-builder": "bin/index.js"
+  }
+}
