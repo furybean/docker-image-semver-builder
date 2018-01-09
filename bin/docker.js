@@ -3,7 +3,7 @@ const spawn = require('child_process').spawn;
 const path = require('path');
 
 const build = function(tag, workingPath, file) {
-  var dockerfilePath = path.join(workingPath, file || './Dockerfile')
+  var dockerfilePath = path.resolve(file || './Dockerfile');
   var args = [workingPath, '-f', dockerfilePath, '-t', tag];
   return exec('build', args);
 };
@@ -47,7 +47,7 @@ exports.buildImage = function(config = {}) {
   if (!workDir) {
     workDir = path.dirname(file);
   }
-  return build(config.imageName + ':' + config.version, path.resolve(workDir), config.file);
+  return build(config.imageName + ':' + config.version, path.resolve(workDir), file);
 };
 
 exports.pushImage = function (image) {
