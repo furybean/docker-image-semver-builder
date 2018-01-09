@@ -1,6 +1,6 @@
 {
   "name": "docker-image-semver-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A docker image builder with semver version support.",
   "main": "index.js",
   "scripts": {
