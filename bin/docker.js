@@ -39,8 +39,15 @@ const exec = function(command, args) {
   })
 };
 
-exports.buildImage = function(config) {
-  return build(config.imageName + ':' + config.version, './', config.file);
+exports.buildImage = function(config = {}) {
+  let { file, workDir } = config;
+  if (!file) {
+    file = 'Dockerfile';
+  }
+  if (!workDir) {
+    workDir = path.dirname(file);
+  }
+  return build(config.imageName + ':' + config.version, path.resolve(workDir), config.file);
 };
 
 exports.pushImage = function (image) {
