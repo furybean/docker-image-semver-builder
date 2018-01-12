@@ -6,7 +6,7 @@ const parse = function(source) {
 
 const fs = require('fs');
 const path = require('path');
-const CONFIG_FILE_NAME = 'dis_config.yml';
+const CONFIG_FILE_NAME = 'dis-config.yml';
 const { promisify } = require('util');
 const exists = promisify(fs.exists);
 const readFile = promisify(fs.readFile);
@@ -19,7 +19,7 @@ exports.load = function() {
       if (isExists) {
         return readFile(absolutePath);
       } else {
-        throw new Error('"dis_config.yml" is not found in current working directory.');
+        throw new Error('"dis-config.yml" is not found in current working directory.');
       }
     })
     .then((content) => {
